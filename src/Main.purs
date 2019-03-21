@@ -2,12 +2,19 @@ module Main where
 
 import Prelude
 
-import Effect.Console (log)
+import Data.Int (fromString)
+import Data.Maybe (fromMaybe, maybe)
+import Effect (Effect)
 import HTTPure as HTTPure
+import Node.Process (lookupEnv)
 
-port :: Int
-port = 8080
+lookupPort :: Effect Int
+lookupPort = do 
+  portEnv <- lookupEnv "PORT"
+  pure $ maybe 5000 (fromMaybe 5000 <<< fromString) portEnv
 
 main :: HTTPure.ServerM
-main = HTTPure.serve port (const $ HTTPure.ok "hello world!") do 
-  log $ "Hello! Server running on port " <> show port
+main = do
+  port <- lookupPort
+  HTTPure.serve port (const $ HTTPure.ok "hello world!") $ pure unit
+  
