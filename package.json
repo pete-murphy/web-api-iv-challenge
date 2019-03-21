@@ -1,0 +1,25 @@
+{
+  "name": "webapi-iv-challenge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ptrfrncsmrph/web-api-iv-challenge.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ptrfrncsmrph/web-api-iv-challenge/issues"
+  },
+  "homepage": "https://github.com/ptrfrncsmrph/web-api-iv-challenge#readme",
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  }
+}
