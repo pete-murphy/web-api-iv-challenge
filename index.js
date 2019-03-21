@@ -3917,13 +3917,13 @@ var PS = {};
   var Prelude = PS["Prelude"];                 
   var lookupPort = function __do() {
       var v = Node_Process.lookupEnv("PORT")();
-      return Data_Maybe.maybe(5000)(function ($4) {
-          return Data_Maybe.fromMaybe(5000)(Data_Int.fromString($4));
+      return Data_Maybe.maybe(4321)(function ($4) {
+          return Data_Maybe.fromMaybe(1234)(Data_Int.fromString($4));
       })(v);
   };
   var main = function __do() {
       var v = lookupPort();
-      return HTTPure_Server.serve(v)(Data_Function["const"](HTTPure_Response.ok(HTTPure_Body.bodyString)("hello world!")))(Effect_Class_Console.log(Effect_Class.monadEffectEffect)("Running on port " + Data_Show.show(Data_Show.showInt)(v)))();
+      return HTTPure_Server.serve(v)(Data_Function["const"](HTTPure_Response.ok(HTTPure_Body.bodyString)("hello world!")))(Effect_Class_Console.log(Effect_Class.monadEffectEffect)("This message is from me, I want me to know that the server is running on port " + Data_Show.show(Data_Show.showInt)(v)))();
   };
   exports["lookupPort"] = lookupPort;
   exports["main"] = main;

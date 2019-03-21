@@ -12,7 +12,7 @@ import Node.Process (lookupEnv)
 lookupPort :: Effect Int
 lookupPort = do 
   portEnv <- lookupEnv "PORT"
-  pure $ maybe 5000 (fromMaybe 5000 <<< fromString) portEnv
+  pure $ maybe 4321 (fromMaybe 1234 <<< fromString) portEnv
 
 main :: HTTPure.ServerM
 main = do
