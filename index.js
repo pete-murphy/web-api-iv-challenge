@@ -3923,7 +3923,7 @@ var PS = {};
   };
   var main = function __do() {
       var v = lookupPort();
-      return HTTPure_Server.serve(v)(Data_Function["const"](HTTPure_Response.ok(HTTPure_Body.bodyString)("hello world!")))(Effect_Class_Console.log(Effect_Class.monadEffectEffect)("This message is from me, I want me to know that the server is running on port " + Data_Show.show(Data_Show.showInt)(v)))();
+      return HTTPure_Server.serve(v)(Data_Function["const"](HTTPure_Response.ok(HTTPure_Body.bodyString)("hello world!")))(Effect_Class_Console.log(Effect_Class.monadEffectEffect)("HTTPure server running on port " + Data_Show.show(Data_Show.showInt)(v)))();
   };
   exports["lookupPort"] = lookupPort;
   exports["main"] = main;
