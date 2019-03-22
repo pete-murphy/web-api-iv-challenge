@@ -19,4 +19,4 @@ main = do
   port <- lookupPort
   HTTPure.serve port (const $ HTTPure.ok "hello world!") $ 
     log $ "Running on port " <> show port
-  
+
