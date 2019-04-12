@@ -17,5 +17,4 @@ lookupPort = do
 main :: HTTPure.ServerM
 main = do
   port <- lookupPort
-  HTTPure.serve port (const $ HTTPure.ok "hello world!") $ 
-    log $ "HTTPure server running on port " <> show port
+  HTTPure.serve port (\_ -> HTTPure.ok "hello world") $ log "Heoll"
